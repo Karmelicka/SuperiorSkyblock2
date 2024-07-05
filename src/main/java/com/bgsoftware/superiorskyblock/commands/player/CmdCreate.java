@@ -10,6 +10,7 @@ import com.bgsoftware.superiorskyblock.core.messages.Message;
 import com.bgsoftware.superiorskyblock.island.IslandNames;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class CmdCreate implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("create");
+        return Arrays.asList("create", "stwórz", "stworz");
     }
 
     @Override
@@ -29,7 +30,7 @@ public class CmdCreate implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        StringBuilder usage = new StringBuilder("create");
+        StringBuilder usage = new StringBuilder("stwórz");
 
         if (plugin.getSettings().getIslandNames().isRequiredForCreation())
             usage.append(" <").append(Message.COMMAND_ARGUMENT_ISLAND_NAME.getMessage(locale)).append(">");

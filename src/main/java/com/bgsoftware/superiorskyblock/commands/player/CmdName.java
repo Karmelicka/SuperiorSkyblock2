@@ -20,7 +20,7 @@ public class CmdName implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("name", "setname", "rename");
+        return Arrays.asList("name", "setname", "rename", "nazwa");
     }
 
     @Override
@@ -30,7 +30,7 @@ public class CmdName implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "name <" + Message.COMMAND_ARGUMENT_ISLAND_NAME.getMessage(locale) + ">";
+        return "nazwa (nowa-nazwa)";
     }
 
     @Override

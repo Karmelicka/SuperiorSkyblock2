@@ -21,7 +21,7 @@ public class CmdDisband implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("disband", "reset", "delete");
+        return Arrays.asList("disband", "reset", "delete", "usun", "usuń");
     }
 
     @Override
@@ -31,7 +31,7 @@ public class CmdDisband implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "disband";
+        return "usuń";
     }
 
     @Override

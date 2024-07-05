@@ -20,7 +20,7 @@ public class CmdTeleport implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("tp", "teleport", "go", "home");
+        return Arrays.asList("tp", "teleport", "go", "home", "dom", "baza");
     }
 
     @Override
@@ -30,7 +30,7 @@ public class CmdTeleport implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "teleport";
+        return "dom";
     }
 
     @Override

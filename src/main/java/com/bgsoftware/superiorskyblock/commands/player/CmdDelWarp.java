@@ -16,6 +16,7 @@ import com.bgsoftware.superiorskyblock.world.chunk.ChunkLoadReason;
 import com.bgsoftware.superiorskyblock.world.chunk.ChunksProvider;
 import org.bukkit.entity.Player;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class CmdDelWarp implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("delwarp");
+        return Arrays.asList("delwarp", "usuńwarp", "usunwarp");
     }
 
     @Override
@@ -33,7 +34,7 @@ public class CmdDelWarp implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "delwarp <" + Message.COMMAND_ARGUMENT_WARP_NAME.getMessage(locale) + "...>";
+        return "delwarp (" + Message.COMMAND_ARGUMENT_WARP_NAME.getMessage(locale) + ")";
     }
 
     @Override

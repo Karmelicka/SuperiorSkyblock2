@@ -19,7 +19,7 @@ public class CmdPardon implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("pardon", "unban");
+        return Arrays.asList("pardon", "unban", "odblokuj");
     }
 
     @Override
@@ -29,7 +29,7 @@ public class CmdPardon implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "pardon <" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ">";
+        return "odblokuj (" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ")";
     }
 
     @Override

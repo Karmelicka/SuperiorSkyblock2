@@ -29,7 +29,7 @@ public class CmdPanel implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "panel [members/visitors] [toggle]";
+        return "panel";
     }
 
     @Override

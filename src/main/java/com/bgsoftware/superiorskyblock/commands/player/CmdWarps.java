@@ -7,6 +7,7 @@ import com.bgsoftware.superiorskyblock.core.messages.Message;
 import com.bgsoftware.superiorskyblock.commands.ISuperiorCommand;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class CmdWarps implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("warps");
+        return Arrays.asList("warps", "warpy");
     }
 
     @Override
@@ -24,7 +25,7 @@ public class CmdWarps implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "warps";
+        return "warpy";
     }
 
     @Override

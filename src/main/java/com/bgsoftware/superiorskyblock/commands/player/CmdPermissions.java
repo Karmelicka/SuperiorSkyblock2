@@ -22,7 +22,7 @@ public class CmdPermissions implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("permissions", "perms", "setpermission", "setperm");
+        return Arrays.asList("permissions", "perms", "setpermission", "setperm", "uprawnienia");
     }
 
     @Override
@@ -32,7 +32,7 @@ public class CmdPermissions implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "permissions [" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + "] [reset]";
+        return "uprawnienia (" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ")";
     }
 
     @Override

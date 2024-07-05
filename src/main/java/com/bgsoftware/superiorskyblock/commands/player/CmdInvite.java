@@ -19,7 +19,7 @@ public class CmdInvite implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("invite", "add");
+        return Arrays.asList("invite", "add","zapros", "zaproś","dodaj");
     }
 
     @Override
@@ -29,7 +29,7 @@ public class CmdInvite implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "invite <" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ">";
+        return "zaproś (" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ")";
     }
 
     @Override

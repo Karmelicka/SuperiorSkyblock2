@@ -14,6 +14,7 @@ import com.bgsoftware.superiorskyblock.island.role.SPlayerRole;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class CmdSetRole implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("setrole");
+        return Arrays.asList("setrole", "ustawgrupe");
     }
 
     @Override
@@ -31,9 +32,9 @@ public class CmdSetRole implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "setrole <" +
-                Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + "> <" +
-                Message.COMMAND_ARGUMENT_ISLAND_ROLE.getMessage(locale) + ">";
+        return "ustawgrupe (" +
+                Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ") (" +
+                Message.COMMAND_ARGUMENT_ISLAND_ROLE.getMessage(locale) + ")";
     }
 
     @Override

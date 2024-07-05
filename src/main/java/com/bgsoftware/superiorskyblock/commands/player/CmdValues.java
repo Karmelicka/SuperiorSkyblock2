@@ -11,6 +11,7 @@ import com.bgsoftware.superiorskyblock.core.menu.view.MenuViewWrapper;
 import com.bgsoftware.superiorskyblock.core.messages.Message;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class CmdValues implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("values");
+        return Arrays.asList("values", "wartosci", "wartości");
     }
 
     @Override
@@ -28,9 +29,7 @@ public class CmdValues implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "values [" +
-                Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + "/" +
-                Message.COMMAND_ARGUMENT_ISLAND_NAME.getMessage(locale) + "]";
+        return "wartości";
     }
 
     @Override

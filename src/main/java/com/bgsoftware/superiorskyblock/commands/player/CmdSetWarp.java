@@ -32,8 +32,8 @@ public class CmdSetWarp implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        StringBuilder usage = new StringBuilder("setwarp <")
-                .append(Message.COMMAND_ARGUMENT_WARP_NAME.getMessage(locale)).append(">");
+        StringBuilder usage = new StringBuilder("setwarp (")
+                .append(Message.COMMAND_ARGUMENT_WARP_NAME.getMessage(locale)).append(")");
 
         if (plugin.getSettings().isWarpCategories())
             usage.append(" [").append(Message.COMMAND_ARGUMENT_WARP_CATEGORY.getMessage(locale)).append("]");

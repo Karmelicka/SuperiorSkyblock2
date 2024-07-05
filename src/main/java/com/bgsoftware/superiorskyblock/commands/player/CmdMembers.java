@@ -10,6 +10,7 @@ import com.bgsoftware.superiorskyblock.core.messages.Message;
 import com.bgsoftware.superiorskyblock.commands.ISuperiorCommand;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class CmdMembers implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("members");
+        return Arrays.asList("members", "członkowie", "czlonkowie");
     }
 
     @Override
@@ -27,7 +28,7 @@ public class CmdMembers implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "members";
+        return "członkowie";
     }
 
     @Override

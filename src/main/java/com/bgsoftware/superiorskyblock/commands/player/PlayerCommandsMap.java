@@ -16,7 +16,7 @@ public class PlayerCommandsMap extends CommandsMap {
         registerCommand(new CmdBan(), false);
         registerCommand(new CmdBiome(), false);
         registerCommand(new CmdBorder(), false);
-        registerCommand(new CmdChest(), false);
+//        registerCommand(new CmdChest(), false);
         registerCommand(new CmdClose(), false);
         if (plugin.getSettings().isCoopMembers()) {
             registerCommand(new CmdCoop(), false);
@@ -28,11 +28,11 @@ public class PlayerCommandsMap extends CommandsMap {
         registerCommand(new CmdDemote(), false);
         registerCommand(new CmdDisband(), false);
         registerCommand(new CmdExpel(), false);
-        registerCommand(new CmdFly(), false);
+//        registerCommand(new CmdFly(), false);
         registerCommand(new CmdHelp(), false);
         registerCommand(new CmdInvite(), false);
         registerCommand(new CmdKick(), false);
-        registerCommand(new CmdLang(), false);
+//        registerCommand(new CmdLang(), false);
         registerCommand(new CmdLeave(), false);
         registerCommand(new CmdMembers(), false);
         registerCommand(new CmdName(), false);
@@ -44,9 +44,9 @@ public class PlayerCommandsMap extends CommandsMap {
         registerCommand(new CmdRate(), false);
         registerCommand(new CmdRatings(), false);
         registerCommand(new CmdRecalc(), false);
-        registerCommand(new CmdSetDiscord(), false);
-        registerCommand(new CmdSetPaypal(), false);
-        registerCommand(new CmdSetRole(), false);
+//        registerCommand(new CmdSetDiscord(), false);
+//        registerCommand(new CmdSetPaypal(), false);
+//        registerCommand(new CmdSetRole(), false);
         registerCommand(new CmdSetTeleport(), false);
         registerCommand(new CmdSettings(), false);
         registerCommand(new CmdSetWarp(), false);
@@ -59,7 +59,7 @@ public class PlayerCommandsMap extends CommandsMap {
         registerCommand(new CmdTransfer(), false);
         if (plugin.getSettings().isCoopMembers())
             registerCommand(new CmdUncoop(), false);
-        registerCommand(new CmdValue(), false);
+//        registerCommand(new CmdValue(), false);
         registerCommand(new CmdValues(), false);
         registerCommand(new CmdVisit(), false);
         registerCommand(new CmdVisitors(), false);

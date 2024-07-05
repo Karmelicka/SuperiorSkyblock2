@@ -16,7 +16,7 @@ public class CmdBiome implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("biome", "setbiome");
+        return Arrays.asList("biom", "ustawbiom");
     }
 
     @Override
@@ -26,12 +26,17 @@ public class CmdBiome implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "biome";
+        return "biom";
     }
 
     @Override
     public String getDescription(java.util.Locale locale) {
         return Message.COMMAND_DESCRIPTION_BIOME.getMessage(locale);
+    }
+
+    @Override
+    public boolean displayCommand() {
+        return false;
     }
 
     @Override

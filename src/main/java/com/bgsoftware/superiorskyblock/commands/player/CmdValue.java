@@ -16,6 +16,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class CmdValue implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("value");
+        return Arrays.asList("value", "wartość", "wartosc");
     }
 
     @Override
@@ -33,7 +34,7 @@ public class CmdValue implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "value [" + Message.COMMAND_ARGUMENT_MATERIAL.getMessage(locale) + "]";
+        return "wartość";
     }
 
     @Override

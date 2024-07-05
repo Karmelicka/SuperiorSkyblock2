@@ -32,10 +32,7 @@ public class CmdWarp implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "warp [" +
-                Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + "/" +
-                Message.COMMAND_ARGUMENT_ISLAND_NAME.getMessage(locale) + "] [" +
-                Message.COMMAND_ARGUMENT_WARP_NAME.getMessage(locale) + "]";
+        return "warp (" + Message.COMMAND_ARGUMENT_WARP_NAME.getMessage(locale) + ")";
     }
 
     @Override

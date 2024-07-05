@@ -11,6 +11,7 @@ import com.bgsoftware.superiorskyblock.commands.ISuperiorCommand;
 import com.bgsoftware.superiorskyblock.island.IslandUtils;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class CmdBorder implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("border");
+        return Arrays.asList("border", "granica");
     }
 
     @Override
@@ -28,12 +29,17 @@ public class CmdBorder implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "border [" + Message.COMMAND_ARGUMENT_BORDER_COLOR.getMessage(locale) + "]";
+        return "granica";
     }
 
     @Override
     public String getDescription(java.util.Locale locale) {
         return Message.COMMAND_DESCRIPTION_BORDER.getMessage(locale);
+    }
+
+    @Override
+    public boolean displayCommand() {
+        return false;
     }
 
     @Override
@@ -43,7 +49,7 @@ public class CmdBorder implements ISuperiorCommand {
 
     @Override
     public int getMaxArgs() {
-        return 2;
+        return 1;
     }
 
     @Override
@@ -55,22 +61,12 @@ public class CmdBorder implements ISuperiorCommand {
     public void execute(SuperiorSkyblockPlugin plugin, CommandSender sender, String[] args) {
         SuperiorPlayer superiorPlayer = plugin.getPlayers().getSuperiorPlayer(sender);
 
-        if (args.length != 2) {
-            plugin.getMenus().openBorderColor(superiorPlayer, MenuViewWrapper.fromView(superiorPlayer.getOpenedView()));
-            return;
-        }
-
-        BorderColor borderColor = CommandArguments.getBorderColor(sender, args[1]);
-
-        if (borderColor == null)
-            return;
-
-        IslandUtils.handleBorderColorUpdate(superiorPlayer, borderColor);
+        plugin.getMenus().openBorderColor(superiorPlayer, MenuViewWrapper.fromView(superiorPlayer.getOpenedView()));
     }
 
     @Override
     public List<String> tabComplete(SuperiorSkyblockPlugin plugin, CommandSender sender, String[] args) {
-        return args.length != 2 ? Collections.emptyList() : CommandTabCompletes.getBorderColors(args[1]);
+        return Collections.emptyList();
     }
 
 }

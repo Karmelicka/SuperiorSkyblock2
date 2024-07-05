@@ -9,6 +9,7 @@ import com.bgsoftware.superiorskyblock.api.wrappers.SuperiorPlayer;
 import com.bgsoftware.superiorskyblock.commands.IPermissibleCommand;
 import com.bgsoftware.superiorskyblock.island.privilege.IslandPrivileges;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class CmdSettings implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("settings");
+        return Arrays.asList("settings","ustawienia");
     }
 
     @Override
@@ -26,7 +27,7 @@ public class CmdSettings implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "settings";
+        return "ustawienia";
     }
 
     @Override

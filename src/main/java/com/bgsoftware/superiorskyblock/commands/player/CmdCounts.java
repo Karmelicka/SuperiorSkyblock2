@@ -18,7 +18,7 @@ public class CmdCounts implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("counts", "blocks");
+        return Arrays.asList("counts","bloki", "blocks");
     }
 
     @Override
@@ -28,9 +28,8 @@ public class CmdCounts implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "counts [" +
-                Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + "/" +
-                Message.COMMAND_ARGUMENT_ISLAND_NAME.getMessage(locale) + "]";
+        return "bloki (" +
+                Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ")";
     }
 
     @Override

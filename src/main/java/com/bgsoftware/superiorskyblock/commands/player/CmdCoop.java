@@ -19,7 +19,7 @@ public class CmdCoop implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("coop", "trust");
+        return Arrays.asList("coop", "trust", "ufaj", "zaufaj");
     }
 
     @Override
@@ -29,7 +29,7 @@ public class CmdCoop implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "coop <" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ">";
+        return "zaufaj (" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ")";
     }
 
     @Override

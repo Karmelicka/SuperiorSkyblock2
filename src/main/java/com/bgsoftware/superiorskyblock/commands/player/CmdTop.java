@@ -8,6 +8,7 @@ import com.bgsoftware.superiorskyblock.commands.ISuperiorCommand;
 import com.bgsoftware.superiorskyblock.island.top.SortingTypes;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class CmdTop implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("top");
+        return Arrays.asList("topka","top");
     }
 
     @Override
@@ -25,7 +26,7 @@ public class CmdTop implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "top";
+        return "topka";
     }
 
     @Override

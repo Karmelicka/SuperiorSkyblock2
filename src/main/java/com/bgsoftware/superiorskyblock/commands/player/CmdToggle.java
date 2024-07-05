@@ -7,6 +7,7 @@ import com.bgsoftware.superiorskyblock.commands.ISuperiorCommand;
 import com.bgsoftware.superiorskyblock.core.messages.Message;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class CmdToggle implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("toggle");
+        return Arrays.asList("toggle", "przelacz", "przełącz");
     }
 
     @Override
@@ -24,7 +25,7 @@ public class CmdToggle implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "toggle <border/blocks>";
+        return "przełącz (granica/bloki)";
     }
 
     @Override
@@ -51,7 +52,7 @@ public class CmdToggle implements ISuperiorCommand {
     public void execute(SuperiorSkyblockPlugin plugin, CommandSender sender, String[] args) {
         SuperiorPlayer superiorPlayer = plugin.getPlayers().getSuperiorPlayer(sender);
 
-        if (args[1].equalsIgnoreCase("border")) {
+        if (args[1].equalsIgnoreCase("granica") || args[1].equalsIgnoreCase("border")) {
             if (!superiorPlayer.hasPermission("superior.island.toggle.border")) {
                 Message.NO_COMMAND_PERMISSION.send(sender);
                 return;
@@ -68,7 +69,7 @@ public class CmdToggle implements ISuperiorCommand {
 
             superiorPlayer.toggleWorldBorder();
             superiorPlayer.updateWorldBorder(plugin.getGrid().getIslandAt(superiorPlayer.getLocation()));
-        } else if (args[1].equalsIgnoreCase("blocks")) {
+        } else if (args[1].equalsIgnoreCase("blocks") || args[1].equalsIgnoreCase("bloki")) {
             if (!superiorPlayer.hasPermission("superior.island.toggle.blocks")) {
                 Message.NO_COMMAND_PERMISSION.send(sender);
                 return;
@@ -93,7 +94,7 @@ public class CmdToggle implements ISuperiorCommand {
     @Override
     public List<String> tabComplete(SuperiorSkyblockPlugin plugin, CommandSender sender, String[] args) {
         return args.length == 2 ? CommandTabCompletes.getCustomComplete(args[1], var ->
-                sender.hasPermission("superior.island.toggle." + var), "border", "blocks") : Collections.emptyList();
+                sender.hasPermission("superior.island.toggle." + var), "granica", "bloki") : Collections.emptyList();
     }
 
 }

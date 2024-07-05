@@ -19,7 +19,7 @@ public class CmdAccept implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("accept", "join");
+        return Arrays.asList("accept","akceptuj", "dolacz", "dołącz");
     }
 
     @Override
@@ -29,9 +29,7 @@ public class CmdAccept implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "accept [" +
-                Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + "/" +
-                Message.COMMAND_ARGUMENT_ISLAND_NAME.getMessage(locale) + "]";
+        return "akceptuj (" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ")";
     }
 
     @Override

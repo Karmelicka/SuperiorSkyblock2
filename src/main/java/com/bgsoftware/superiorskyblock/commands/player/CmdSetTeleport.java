@@ -18,7 +18,7 @@ public class CmdSetTeleport implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("settp", "setteleport", "setgo", "sethome");
+        return Arrays.asList("settp", "setteleport", "setgo", "sethome","ustawdom");
     }
 
     @Override
@@ -28,7 +28,7 @@ public class CmdSetTeleport implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "setteleport";
+        return "ustawdom";
     }
 
     @Override

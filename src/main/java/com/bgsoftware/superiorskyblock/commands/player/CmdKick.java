@@ -20,7 +20,7 @@ public class CmdKick implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("kick", "remove");
+        return Arrays.asList("kick", "remove", "wyrzuc", "wyrzuć");
     }
 
     @Override
@@ -30,7 +30,7 @@ public class CmdKick implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "kick <" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ">";
+        return "wyrzuć (" + Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ")";
     }
 
     @Override

@@ -8,6 +8,7 @@ import com.bgsoftware.superiorskyblock.core.messages.Message;
 import com.bgsoftware.superiorskyblock.player.PlayerLocales;
 import org.bukkit.command.CommandSender;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class CmdHelp implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("help");
+        return Arrays.asList("help", "pomoc");
     }
 
     @Override
@@ -26,7 +27,7 @@ public class CmdHelp implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "help [" + Message.COMMAND_ARGUMENT_PAGE.getMessage(locale) + "]";
+        return "pomoc";
     }
 
     @Override
@@ -48,25 +49,12 @@ public class CmdHelp implements ISuperiorCommand {
     public boolean canBeExecutedByConsole() {
         return true;
     }
-
+    @Override
+    public boolean displayCommand() {
+        return false;
+    }
     @Override
     public void execute(SuperiorSkyblockPlugin plugin, CommandSender sender, String[] args) {
-        int page = 1;
-
-        if (args.length == 2) {
-            try {
-                page = Integer.parseInt(args[1]);
-            } catch (IllegalArgumentException ex) {
-                Message.INVALID_AMOUNT.send(sender, args[1]);
-                return;
-            }
-        }
-
-        if (page <= 0) {
-            Message.INVALID_AMOUNT.send(sender, page);
-            return;
-        }
-
         List<SuperiorCommand> subCommands = new SequentialListBuilder<SuperiorCommand>()
                 .filter(subCommand -> subCommand.displayCommand() && (subCommand.getPermission().isEmpty() ||
                         sender.hasPermission(subCommand.getPermission())))
@@ -77,17 +65,7 @@ public class CmdHelp implements ISuperiorCommand {
             return;
         }
 
-        int lastPage = subCommands.size() / 7;
-        if (subCommands.size() % 7 != 0) lastPage++;
-
-        if (page > lastPage) {
-            Message.INVALID_AMOUNT.send(sender, page);
-            return;
-        }
-
-        subCommands = subCommands.subList((page - 1) * 7, Math.min(subCommands.size(), page * 7));
-
-        Message.ISLAND_HELP_HEADER.send(sender, page, lastPage);
+        Message.ISLAND_HELP_HEADER.send(sender);
 
         java.util.Locale locale = PlayerLocales.getLocale(sender);
 
@@ -95,33 +73,13 @@ public class CmdHelp implements ISuperiorCommand {
             String description = _subCommand.getDescription(locale);
             if (description == null)
                 new NullPointerException("The description of the command " + _subCommand.getAliases().get(0) + " is null.").printStackTrace();
+
             Message.ISLAND_HELP_LINE.send(sender, plugin.getCommands().getLabel() + " " + _subCommand.getUsage(locale), description == null ? "" : description);
         }
-
-        if (page != lastPage)
-            Message.ISLAND_HELP_NEXT_PAGE.send(sender, page + 1);
-        else
-            Message.ISLAND_HELP_FOOTER.send(sender);
     }
 
     @Override
     public List<String> tabComplete(SuperiorSkyblockPlugin plugin, CommandSender sender, String[] args) {
-        List<String> list = new LinkedList<>();
-
-        if (args.length == 2) {
-            List<SuperiorCommand> subCommands = new SequentialListBuilder<SuperiorCommand>()
-                    .filter(subCommand -> subCommand.displayCommand() && (subCommand.getPermission().isEmpty() ||
-                            sender.hasPermission(subCommand.getPermission())))
-                    .build(plugin.getCommands().getSubCommands());
-
-            int lastPage = subCommands.size() / 7;
-            if (subCommands.size() % 7 != 0) lastPage++;
-
-            for (int i = 1; i <= lastPage; i++)
-                list.add(i + "");
-        }
-
-        return Collections.unmodifiableList(list);
+        return Collections.emptyList();
     }
-
 }

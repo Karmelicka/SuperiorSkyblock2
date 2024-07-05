@@ -15,7 +15,7 @@ public class CmdClose implements IPermissibleCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("close", "lock");
+        return Arrays.asList("close","zamknij", "lock");
     }
 
     @Override
@@ -25,7 +25,7 @@ public class CmdClose implements IPermissibleCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "close";
+        return "zamknij";
     }
 
     @Override

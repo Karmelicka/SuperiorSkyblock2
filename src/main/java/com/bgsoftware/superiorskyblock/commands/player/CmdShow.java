@@ -26,7 +26,7 @@ public class CmdShow implements ISuperiorCommand {
 
     @Override
     public List<String> getAliases() {
-        return Arrays.asList("show", "info");
+        return Arrays.asList("show", "info", "informacje");
     }
 
     @Override
@@ -36,9 +36,8 @@ public class CmdShow implements ISuperiorCommand {
 
     @Override
     public String getUsage(java.util.Locale locale) {
-        return "show [" +
-                Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + "/" +
-                Message.COMMAND_ARGUMENT_ISLAND_NAME.getMessage(locale) + "]";
+        return "informacje (" +
+                Message.COMMAND_ARGUMENT_PLAYER_NAME.getMessage(locale) + ")";
     }
 
     @Override
